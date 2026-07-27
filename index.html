@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background-color: #f3f5f9; 
+            padding: 40px 20px;
+        }
+        .wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+        }
+        /* 4列网格布局 */
+        .grid-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        .grid-item {
+            border: 1px solid #d6d9e2;
+            border-radius: 8px;
+            background: #fff;
+            text-align: center;
+            padding: 22px 10px;
+            font-size: 24px;
+            color: #384259;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .grid-item:hover {
+            border-color: #99a4bc;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+        }
+        /* 移动端自动适配 */
+        @media (max-width: 1024px) {
+            .grid-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 560px) {
+            .grid-box {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="grid-box">
+     <a href="https://miankoutupian.com/" target="_blank" class="grid-item">免扣图片</a>
+     <a href="http://www.kuaipng.com/" target="_blank" class="grid-item">快图网</a>
+     <a href="https://www.gaituya.com/" target="_blank" class="grid-item">改图鸭</a>
+     <a href="https://phototool.cn/" target="_blank" class="grid-item">在线修图工具</a>
+
+     <a href="https://www.aigei.com/" target="_blank" class="grid-item">爱给图标</a>
+     <a href="https://imagestool.com/" target="_blank" class="grid-item">imag修图</a>
+     <a href="https://icon.zhheo.com/" target="_blank" class="grid-item">洪绘图标</a>
+     <a href="https://webicon.cc/zh-cn" target="_blank" class="grid-item">网址搜索图标</a>
+
+     <a href="http://www.zuohaotu.com/" target="_blank" class="grid-item">做好图</a>
+     <a href="https://bizhi.cheetahfun.com/" target="_blank" class="grid-item">元气壁纸</a>
+     <a href="https://www.netbian.com/" target="_blank" class="grid-item">彼岸壁纸</a>
+     <a href="https://www.jj20.com/" target="_blank" class="grid-item">娟娟壁纸</a>
+
+     <a href="https://www.designkit.cn/tools" target="_blank" class="grid-item">美图秀秀网页版</a>
+     <a href="https://www.superbed.cn/" target="_blank" class="grid-item">聚合图床</a>
+     <a href="https://www.imgurl.org/" target="_blank" class="grid-item">img图床</a>
+     <a href="https://img.honghuohu.com/" target="_blank" class="grid-item">图片在线压缩</a>
+
+     <a href="https://remeins.com/index/list/image" target="_blank" class="grid-item">记灵修图</a>
+     <a href="https://svgco.de/" target="_blank" class="grid-item">svg图片压缩</a>
+     <a href="https://www.zaixiangongju.com/" target="_blank" class="grid-item">在线工具箱</a>
+     <a href="https://tool56.com/" target="_blank" class="grid-item">56工具箱</a>
+
+       
+    </div>
+</div>
+<script>
+
+</script>
+</body>
+</html>
