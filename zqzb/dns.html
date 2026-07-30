@@ -118,14 +118,14 @@ items.forEach(item => {
     const randomBg = colorList[Math.floor(Math.random() * colorList.length)];
     // 网站图标代理地址
     const iconUrl = `https://icons.duckduckgo.com/ip2/${domain}.ico`;
-    // 取前两个汉字，不足两个则显示全部
-    const firstTwoChar = name.substring(0,2);
+    // 重点修改：截取前两个汉字
+    const showText = name.substring(0,2);
 
     // 组装内部HTML
     item.innerHTML = `
         <div class="icon-wrap" style="background:${randomBg}">
             <img class="favicon-img" src="${iconUrl}">
-            <span class="text-placeholder">${firstTwoChar}</span>
+            <span class="text-placeholder">${showText}</span>
         </div>
         <span class="title-text">${name}</span>
     `;
