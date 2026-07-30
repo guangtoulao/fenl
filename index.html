@@ -1,107 +1,280 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>图片工具</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-        body {
-            /* =========网页背景图片配置========= */
-            background-image: url("https://img0.baidu.com/it/u=1701914572,1708988173&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500");
-            background-size: cover;       /*铺满全屏*/
-            background-position: center;   /*居中*/
-            background-attachment: fixed;  /*滚动时背景固定不动*/
-            background-repeat: no-repeat;
-            padding: 40px 20px;
-        }
-        .wrap {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.92);
-            padding: 24px;
-            border-radius: 12px;
-            /* 可选：给白色容器增加透明度，透出背景图 */
-            /* background: rgba(255,255,255,0.92); */
-        }
-        /* 4列网格布局 */
-        .grid-box {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-        .grid-item {
-            display:block;
-            text-decoration: none;
-            border: 1px solid #d6d9e2;
-            border-radius: 8px;
-            background: #fff;
-            text-align: center;
-            padding: 22px 10px;
-            font-size: 24px;
-            color: #384259;
-            font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-        .grid-item:hover {
-            border-color: #6388d8;
-            background-color: #f0f5ff;
-            color: #2b5cb8;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.09);
-        }
-        /* 移动端自动适配 */
-        @media (max-width: 1024px) {
-            .grid-box {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 560px) {
-            .grid-box {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片工具</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+body {
+  /* =========网页背景图片配置========= */
+    background-image: url("https://img0.baidu.com/it/u=1701914572,1708988173&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500");
+    background-size: cover;       /*铺满全屏*/
+    background-position: center;   /*居中*/
+    background-attachment: fixed;  /*滚动时背景固定不动*/
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+}
+{
+  background-color: #f4f4f7; /*页面背景色【可修改】*/
+  padding: 24px;
+}
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px; /*卡片间距【可修改数值】*/
+  max-width: 100%;
+}
+.app-card {
+  background: #ffffff;
+  border-radius: 14px; /*卡片圆角【可修改数值】*/
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer; /*鼠标悬浮显示手型，提示可点击*/
+  transition: all 0.2s ease;
+}
+/*悬浮轻微上浮效果，还原tab站点风格*/
+.app-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.app-header {
+  display: flex;
+  gap: 14px;
+}
+.app-icon {
+  width: 64px;  /*图标尺寸【可修改数值】*/
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.app-info {
+  flex: 1;
+}
+.app-name {
+  font-size: 22px;
+  font-weight: 500;
+  color: #222222;
+  margin-bottom:6px;
+}
+.app-desc {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.5;
+}
+.app-tag {
+  width: fit-content;
+  padding: 6px 14px;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  font-size:14px;
+  color:#555;
+  margin-top:4px;
+}
+</style>
 </head>
 <body>
-<div class="wrap">
-    <div class="grid-box">
-     <a href="https://miankoutupian.com/" target="_blank" class="grid-item">免扣图片</a>
-     <a href="http://www.kuaipng.com/" target="_blank" class="grid-item">快图网</a>
-     <a href="https://www.gaituya.com/" target="_blank" class="grid-item">改图鸭</a>
-     <a href="https://phototool.cn/" target="_blank" class="grid-item">在线修图工具</a>
-
-     <a href="https://www.aigei.com/" target="_blank" class="grid-item">爱给图标</a>
-     <a href="https://imagestool.com/" target="_blank" class="grid-item">imag修图</a>
-     <a href="https://icon.zhheo.com/" target="_blank" class="grid-item">洪绘图标</a>
-     <a href="https://webicon.cc/zh-cn" target="_blank" class="grid-item">网址搜索图标</a>
-
-     <a href="http://www.zuohaotu.com/" target="_blank" class="grid-item">做好图</a>
-     <a href="https://bizhi.cheetahfun.com/" target="_blank" class="grid-item">元气壁纸</a>
-     <a href="https://www.netbian.com/" target="_blank" class="grid-item">彼岸壁纸</a>
-     <a href="https://www.jj20.com/" target="_blank" class="grid-item">娟娟壁纸</a>
-
-     <a href="https://www.designkit.cn/tools" target="_blank" class="grid-item">美图秀秀网页版</a>
-     <a href="https://www.superbed.cn/" target="_blank" class="grid-item">聚合图床</a>
-     <a href="https://image.so.com/" target="_blank" class="grid-item">360图片</a>
-     <a href="https://img.honghuohu.com/" target="_blank" class="grid-item">图片在线压缩</a>
-
-     <a href="https://remeins.com/index/list/image" target="_blank" class="grid-item">记灵修图</a>
-     <a href="https://svgco.de/" target="_blank" class="grid-item">svg图片压缩</a>
-     <a href="https://www.zaixiangongju.com/" target="_blank" class="grid-item">在线工具箱</a>
-     <a href="https://tool56.com/" target="_blank" class="grid-item">56工具箱</a>
-
-    
+<div class="app-grid">
+ <!-- 免扣图片 -->
+  <div class="app-card" onclick="window.open('https://miankoutupian.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://miankoutupian.com/favicon.ico" alt="免扣图片">
+      <div class="app-info">
+        <div class="app-name">免扣图片</div>
+        <div class="app-desc">智能抠图。</div>
+      </div>
     </div>
-</div>
-<script>
+    <div class="app-tag"></div>
+  </div>
 
-</script>
+  <!-- 快图网 -->
+  <div class="app-card" onclick="window.open('http://www.kuaipng.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="http://www.kuaipng.com/favicon.ico" alt="快图网">
+      <div class="app-info">
+        <div class="app-name">快图网</div>
+        <div class="app-desc">海量PNG素材和高清背景图库免费下载。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 改图鸭 -->
+  <div class="app-card" onclick="window.open('https://www.gaituya.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://www.gaituya.com/favicon.ico" alt="改图鸭">
+      <div class="app-info">
+        <div class="app-name">改图鸭</div>
+        <div class="app-desc">改图鸭,您身边的图片处理专家。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 在线修图 -->
+  <div class="app-card" onclick="window.open('https://phototool.cn/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://phototool.cn/favicon.ico" alt="在线修图">
+      <div class="app-info">
+        <div class="app-name">高德地图</div>
+        <div class="app-desc">在线图像工具箱是一个专业的图片处理网站。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 爱给图标 -->
+  <div class="app-card" onclick="window.open('https://www.aigei.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://www.aigei.com/favicon.ico" alt="爱给图标">
+      <div class="app-info">
+        <div class="app-name">爱给图标</div>
+        <div class="app-desc">爱给让创造更简单。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+ <!-- 洪绘图标 -->
+  <div class="app-card" onclick="window.open('https://icon.zhheo.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://icon.zhheo.com/favicon.ico" alt="洪绘图标">
+      <div class="app-info">
+        <div class="app-name">洪绘图标</div>
+        <div class="app-desc">专业的图标网站。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+ <!-- 网址搜索图标 -->
+  <div class="app-card" onclick="window.open('https://webicon.cc/zh-cn','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://webicon.cc/zh-cn/favicon.ico" alt="网址搜索图标">
+      <div class="app-info">
+        <div class="app-name">网址搜索图标</div>
+        <div class="app-desc">输入网址就可以获取图标。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+ <!-- 做好图 -->
+  <div class="app-card" onclick="window.open('http://www.zuohaotu.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="http://www.zuohaotu.com/favicon.ico" alt="做好图">
+      <div class="app-info">
+        <div class="app-name">做好图</div>
+        <div class="app-desc">在线处理图片的网站。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+ <!-- 元气壁纸 -->
+  <div class="app-card" onclick="window.open('https://bizhi.cheetahfun.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://bizhi.cheetahfun.com/favicon.ico" alt="元气壁纸">
+      <div class="app-info">
+        <div class="app-name">元气壁纸</div>
+        <div class="app-desc">元气壁纸，壁纸大全。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+ <!-- 娟娟壁纸 -->
+  <div class="app-card" onclick="window.open('https://www.jj20.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://www.jj20.com/favicon.ico" alt="娟娟壁纸">
+      <div class="app-info">
+        <div class="app-name">娟娟壁纸</div>
+        <div class="app-desc">免费下载壁纸。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+ <!-- 美图秀秀网页版 -->
+  <div class="app-card" onclick="window.open('https://www.designkit.cn/tools/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://www.designkit.cn/tools/favicon.ico" alt="美图秀秀网页版">
+      <div class="app-info">
+        <div class="app-name">美图秀秀网页版</div>
+        <div class="app-desc">美团秀秀网页版专业的图片处理网站。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+
+ <!-- 360图片 -->
+  <div class="app-card" onclick="window.open('https://image.so.com//','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://image.so.com//favicon.ico" alt="360图片">
+      <div class="app-info">
+        <div class="app-name">360图片</div>
+        <div class="app-desc">免费下载壁纸。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+ <!-- 360智图 -->
+  <div class="app-card" onclick="window.open('https://pic.360.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://pic.360.com/favicon.ico" alt="360智图">
+      <div class="app-info">
+        <div class="app-name">360智图</div>
+        <div class="app-desc">智能处理图片。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+ <!-- 图片在线压缩 -->
+  <div class="app-card" onclick="window.open('https://img.honghuohu.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://img.honghuohu.com/favicon.ico" alt="图片在线压缩">
+      <div class="app-info">
+        <div class="app-name">图片在线压缩</div>
+        <div class="app-desc">在线压缩图片。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+ <!-- svg图片压缩 -->
+  <div class="app-card" onclick="window.open('https://svgco.de/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://svgco.de/favicon.ico" alt="svg图片压缩">
+      <div class="app-info">
+        <div class="app-name">svg图片压缩</div>
+        <div class="app-desc">svg图片压缩。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+
+  <!-- imag修图 -->
+  <div class="app-card" onclick="window.open('https://imagestool.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://imagestool.com/favicon.ico" alt="imag修图">
+      <div class="app-info">
+        <div class="app-name">imag修图</div>
+        <div class="app-desc">更快更安全，100%免费且无限的文件。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+</div>
 </body>
 </html>
