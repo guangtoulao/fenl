@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片工具</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+body {
+  /* =========网页背景图片配置========= */
+    background-image: url("https://img0.baidu.com/it/u=1701914572,1708988173&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500");
+    background-size: cover;       /*铺满全屏*/
+    background-position: center;   /*居中*/
+    background-attachment: fixed;  /*滚动时背景固定不动*/
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+}
+{
+  background-color: #f4f4f7; /*页面背景色【可修改】*/
+  padding: 24px;
+}
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px; /*卡片间距【可修改数值】*/
+  max-width: 100%;
+}
+.app-card {
+  background: #ffffff;
+  border-radius: 14px; /*卡片圆角【可修改数值】*/
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer; /*鼠标悬浮显示手型，提示可点击*/
+  transition: all 0.2s ease;
+}
+/*悬浮轻微上浮效果，还原tab站点风格*/
+.app-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.app-header {
+  display: flex;
+  gap: 14px;
+}
+.app-icon {
+  width: 64px;  /*图标尺寸【可修改数值】*/
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.app-info {
+  flex: 1;
+}
+.app-name {
+  font-size: 22px;
+  font-weight: 500;
+  color: #222222;
+  margin-bottom:6px;
+}
+.app-desc {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.5;
+}
+.app-tag {
+  width: fit-content;
+  padding: 6px 14px;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  font-size:14px;
+  color:#555;
+  margin-top:4px;
+}
+</style>
+</head>
+<body>
+<div class="app-grid">
+ <!-- 五六工具 -->
+  <div class="app-card" onclick="window.open('https://tool56.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://tool56.com/favicon.ico" alt="五六工具">
+      <div class="app-info">
+        <div class="app-name">五六工具</div>
+        <div class="app-desc">简单好用的在线工具集合，让工作学习更高效
+
+无需下载，打开即用。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 在线工具箱 -->
+  <div class="app-card" onclick="window.open('https://www.zaixiangongju.com//','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://www.zaixiangongju.com//favicon.ico" alt="在线工具箱">
+      <div class="app-info">
+        <div class="app-name">在线工具箱</div>
+        <div class="app-desc">在线工具箱。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 记灵工具箱 -->
+  <div class="app-card" onclick="window.open('https://remeins.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://remeins.com/favicon.ico" alt="记灵工具箱">
+      <div class="app-info">
+        <div class="app-name">记灵工具箱</div>
+        <div class="app-desc">更专注于发现工具的实用性。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 工具哇 -->
+  <div class="app-card" onclick="window.open('https://toolwa.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://toolwa.com/favicon.ico" alt="工具哇">
+      <div class="app-info">
+        <div class="app-name">工具哇</div>
+        <div class="app-desc">工具哇无需下载打开即用。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 菜鸟工具 -->
+  <div class="app-card" onclick="window.open('https://www.jyshare.com/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://www.jyshare.com/favicon.ico" alt="菜鸟工具">
+      <div class="app-info">
+        <div class="app-name">菜鸟工具</div>
+        <div class="app-desc">菜鸟工具。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+</div>
+</body>
+</html>
