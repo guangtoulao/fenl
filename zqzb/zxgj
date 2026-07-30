@@ -82,6 +82,19 @@ body {
 </head>
 <body>
 <div class="app-grid">
+ <!-- 在线工具大全 -->
+  <div class="app-card" onclick="window.open('https://https://www.lddgo.net/base/class/','_blank')">
+    <div class="app-header">
+      <img class="app-icon" src="https://www.lddgo.net/base/class/favicon.ico" alt="在线工具大全">
+      <div class="app-info">
+        <div class="app-name">在线工具大全</div>
+        <div class="app-desc">在线工具大全。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+
  <!-- 五六工具 -->
   <div class="app-card" onclick="window.open('https://tool56.com/','_blank')">
     <div class="app-header">
@@ -96,10 +109,11 @@ body {
     <div class="app-tag"></div>
   </div>
 
+
   <!-- 在线工具箱 -->
-  <div class="app-card" onclick="window.open('https://www.zaixiangongju.com//','_blank')">
+  <div class="app-card" onclick="window.open('https://www.zaixiangongju.com/','_blank')">
     <div class="app-header">
-      <img class="app-icon" src="https://www.zaixiangongju.com//favicon.ico" alt="在线工具箱">
+      <img class="app-icon" src="https://www.zaixiangongju.com/favicon.ico" alt="在线工具箱">
       <div class="app-info">
         <div class="app-name">在线工具箱</div>
         <div class="app-desc">在线工具箱。</div>
