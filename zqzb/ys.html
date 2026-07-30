@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>工具箱大全</title>
+    <title>影视合集</title>
     <style>
         * {
             margin: 0;
@@ -12,119 +12,152 @@
             font-family: system-ui, -apple-system, sans-serif;
         }
         body {
+            /* =========网页背景图片配置========= */
             background-image: url("https://img0.baidu.com/it/u=1701914572,1708988173&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-size: cover;       /*铺满全屏*/
+            background-position: center;   /*居中*/
+            background-attachment: fixed;  /*滚动时背景固定不动*/
             background-repeat: no-repeat;
             padding: 40px 20px;
         }
-        .wrap {
+        /* 卡片网格布局，你自行调整列数 */
+        .app-grid {
             max-width: 1400px;
             margin: 0 auto;
-            background: rgba(255,255,255,0.92);
-            padding: 24px;
-            border-radius: 12px;
-        }
-        /* 4列网格布局 */
-        .grid-box {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 18px;
         }
-        .grid-item {
-            display:flex;
-            align-items:center;
-            gap:14px;
-            text-decoration: none;
+        .app-card {
             border: 1px solid #d6d9e2;
             border-radius: 8px;
             background: #fff;
-            padding: 22px 16px;
+            padding: 16px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             transition: all 0.2s ease;
             cursor: pointer;
-            color:#384259;
         }
-        .grid-item:hover {
+        .app-card:hover {
             border-color: #6388d8;
             background-color: #f0f5ff;
             box-shadow: 0 4px 12px rgba(0,0,0,0.09);
         }
+        .app-header {
+            display:flex;
+            align-items: center;
+            gap:14px;
+        }
         /* 图标容器 */
-        .icon-wrap {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            flex-shrink: 0;
+        .icon-box {
+            width:48px;
+            height:48px;
+            border-radius:12px;
+            flex-shrink:0;
             position:relative;
             overflow:hidden;
-            display:flex;
+        }
+         .app-icon {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #fff;
+            padding: 6px;
+            border-radius: 8px;
+       }
+        /* 兜底文字方块 */
+        .icon-text-fallback {
+            position:absolute;
+            inset:0;
+            color:#fff;
+            font-size:20px;
+            font-weight:bold;
+            display:none;
             align-items:center;
             justify-content:center;
         }
-        /* 网站图标 自动缩放不拉伸 */
-        .site-icon {
-            width: 80%;
-            height: 80%;
-            object-fit: contain;
-        }
-        /* 兜底文字，默认隐藏 */
-        .icon-text {
-            position:absolute;
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: bold;
-            display: none;
-        }
-        .item-name{
-            font-size:24px;
+        .app-info .app-name {
+            font-size:20px;
+            color:#384259;
             font-weight:500;
+        }
+        .app-info .app-desc {
+            font-size:14px;
+            color:#666;
+            margin-top:4px;
         }
         /* 移动端自动适配 */
         @media (max-width: 1024px) {
-            .grid-box {
+            .app-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         @media (max-width: 560px) {
-            .grid-box {
+            .app-grid {
                 grid-template-columns: repeat(1, 1fr);
             }
         }
     </style>
 </head>
 <body>
-<div class="wrap">
-    <div class="grid-box">
-     <a href="https://bjq.catvod.site/" target="_blank" class="grid-item" data-name="tvbox接口编辑" data-domain="bjq.catvod.site">
-        <div class="icon-wrap">
-            <img class="site-icon" alt="">
-            <span class="icon-text"></span>
-        </div>
-        <span class="item-name">tvbox接口编辑</span>
-     </a>
-     <a href="https://www.xhztv.pro/jsondiy" target="_blank" class="grid-item" data-name="小盒子工具箱" data-domain="xhztv.pro">
-        <div class="icon-wrap">
-            <img class="site-icon" alt="">
-            <span class="icon-text"></span>
-        </div>
-        <span class="item-name">小盒子工具箱</span>
-     </a>
-     <a href="http://m.wmsio.cn/" target="_blank" class="grid-item" data-name="盒子地窖" data-domain="m.wmsio.cn">
-        <div class="icon-wrap">
-            <img class="site-icon" alt="">
-            <span class="icon-text"></span>
-        </div>
-        <span class="item-name">盒子地窖</span>
-     </a>
-     <a href="https://yingshi.xxsnav.com/" target="_blank" class="grid-item" data-name="影视导航大全" data-domain="yingshi.xxsnav.com">
-        <div class="icon-wrap">
-            <img class="site-icon" alt="">
-            <span class="icon-text"></span>
-        </div>
-        <span class="item-name">影视导航大全</span>
-     </a>
+<div class="app-grid">
+ <!--接口编辑 -->
+  <div class="app-card" data-name="接口编辑" onclick="window.open('https://bjq.catvod.site/','_blank')">
+    <div class="app-header">
+      <div class="icon-box">
+        <img class="app-icon" src="hhttps://bjq.catvod.site/favicon.ico" alt="接口编辑">
+        <span class="icon-text-fallback"></span>
+      </div>
+      <div class="app-info">
+        <div class="app-name">接口编辑</div>
+        <div class="app-desc">接口编辑。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 盒子工具箱 -->
+  <div class="app-card" data-name=盒子工具箱" onclick="window.open('https://www.xhztv.pro/jsondiy/','_blank')">
+    <div class="app-header">
+      <div class="icon-box">
+        <img class="app-icon" src="https://www.xhztv.pro/jsondiy/favicon.ico" alt="小盒子工具箱">
+        <span class="icon-text-fallback"></span>
+      </div>
+      <div class="app-info">
+        <div class="app-name">盒子工具箱</div>
+        <div class="app-desc">盒子工具箱。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 盒子地窖 -->
+  <div class="app-card" data-name="DNS" onclick="window.open('href="http://m.wmsio.cn/','_blank')">
+    <div class="app-header">
+      <div class="icon-box">
+        <img class="app-icon" src="href="http://m.wmsio.cn/favicon.ico" alt="盒子地窖">
+        <span class="icon-text-fallback"></span>
+      </div>
+      <div class="app-info">
+        <div class="app-name">盒子地窖</div>
+        <div class="app-desc">盒子地窖。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
+  </div>
+
+  <!-- 影视导航大全 -->
+  <div class="app-card" data-name="又拍云" onclick="window.open('https://yingshi.xxsnav.com/','_blank')">
+    <div class="app-header">
+      <div class="icon-box">
+        <img class="app-icon" src="https://yingshi.xxsnav.com/favicon.ico" alt="影视导航大全">
+        <span class="icon-text-fallback"></span>
+      </div>
+      <div class="app-info">
+        <div class="app-name">影视导航大全</div>
+        <div class="app-desc">影视导航大全。</div>
+      </div>
+    </div>
+    <div class="app-tag"></div>
   </div>
 </div>
 <script>
@@ -134,28 +167,27 @@ const colorList = [
     '#9340e8','#00a6b2','#7b61ff','#e64398'
 ];
 
-const cards = document.querySelectorAll('.grid-item');
-cards.forEach(card => {
+// 选中所有卡片
+const cards = document.querySelectorAll('.app-card');
+cards.forEach(card=>{
     const name = card.dataset.name;
-    const domain = card.dataset.domain;
-    const showText = name.substring(0,2);
-    const randomBg = colorList[Math.floor(Math.random() * colorList.length)];
+    // 截取前两个汉字
+    const text = name.substring(0,2);
+    // 随机颜色
+    const randomColor = colorList[Math.floor(Math.random()*colorList.length)];
 
-    const iconWrap = card.querySelector('.icon-wrap');
-    const img = card.querySelector('.site-icon');
-    const textDom = card.querySelector('.icon-text');
+    const iconBox = card.querySelector('.icon-box');
+    const img = card.querySelector('.app-icon');
+    const fallbackText = card.querySelector('.icon-text-fallback');
 
-    // 设置随机背景、兜底文字
-    iconWrap.style.background = randomBg;
-    textDom.innerText = showText;
+    // 设置兜底方块颜色和文字
+    iconBox.style.background = randomColor;
+    fallbackText.innerText = text;
 
-    // 自动获取网站图标
-    img.src = `https://icons.duckduckgo.com/ip2/${domain}.ico`;
-
-    // 图片加载失败：隐藏图片，显示文字
+    // 图片加载失败触发
     img.onerror = function(){
         this.style.display = 'none';
-        textDom.style.display = 'block';
+        fallbackText.style.display = 'flex';
     }
 })
 </script>
