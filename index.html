@@ -9,91 +9,102 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: system-ui, -apple-system, sans-serif; /*【可调】全局字体 */
         }
-        body {
-            /* =========网页背景图片配置========= */
-            background-image: url("https://img0.baidu.com/it/u=1701914572,1708988173&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500");
-            background-size: cover;       /*铺满全屏*/
-            background-position: center;   /*居中*/
-            background-attachment: fixed;  /*滚动时背景固定不动*/
-            background-repeat: no-repeat;
-            padding: 40px 20px;
-        }
-        /* 卡片网格布局，你自行调整列数 */
-        .app-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-        .app-card {
-            border: 1px solid #d6d9e2;
-            border-radius: 8px;
-            background: #fff;
-            padding: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-        .app-card:hover {
-            border-color: #6388d8;
-            background-color: #f0f5ff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.09);
-        }
-        .app-header {
-            display:flex;
-            align-items: center;
-            gap:14px;
-        }
-        /* 图标容器 */
-        .icon-box {
-            width:48px;
-            height:48px;
-            border-radius:12px;
-            flex-shrink:0;
-            position:relative;
-            overflow:hidden;
-        }
-         .app-icon {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background: #fff;
-            padding: 6px;
-            border-radius: 8px;
-       }
-        /* 兜底文字方块 */
-        .icon-text-fallback {
-            position:absolute;
-            inset:0;
-            color:#fff;
-            font-size:20px;
-            font-weight:bold;
-            display:none;
-            align-items:center;
-            justify-content:center;
-        }
-        .app-info .app-name {
-            font-size:20px;
-            color:#384259;
-            font-weight:500;
-        }
-        .app-info .app-desc {
-            font-size:14px;
-            color:#666;
-            margin-top:4px;
-        }
-        /* 移动端自动适配 */
+body {
+    /* =========网页背景图片配置【可调】========= */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: 40px 20px; /*【可调】页面上下内边距 | 上下 左右 */
+}
+/* 卡片网格布局 */
+.app-grid {
+    max-width: 1400px; /*【可调】页面最大宽度 */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*【可调】一行卡片数量 */
+    gap: 18px; /*【可调】卡片间距 */
+}
+.app-card {
+    border: 1px solid #d6d9e2; /*【可调】卡片边框颜色 */
+    border-radius: 8px; /*【可调】卡片圆角 */
+    background: #fff; /*【可调】卡片背景色 */
+    padding: 16px; /*【可调】卡片内部留白 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /*【可调】卡片阴影 */
+    transition: all 0.2s ease;
+    cursor: pointer;
+    height: 130px; /*【可调】卡片高度 */
+    box-sizing: border-box;
+    position: relative; /*定位基准，请勿删除*/
+}
+.app-card:hover {
+    border-color: #6388d8; /*【可调】悬浮边框色 */
+    background-color: #f0f5ff; /*【可调】悬浮背景 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+}
+.app-header {
+    display:flex;
+    align-items: center;
+    gap:14px; /*【可调】图标与标题间距 */
+}
+.icon-box {
+    width:48px; /*【可调】图标尺寸宽 */
+    height:48px; /*【可调】图标尺寸高 */
+    border-radius:12px;
+    flex-shrink:0;
+    position:relative;
+    overflow:hidden;
+}
+.app-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #fff;
+    padding: 6px;
+    border-radius: 8px;
+}
+.icon-text-fallback {
+    position:absolute;
+    inset:0;
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    display:none;
+    align-items:center;
+    justify-content:center;
+}
+.app-info {
+    flex: 1;
+}
+.app-info .app-name {
+    font-size:20px; /*【可调】标题字号 */
+    color:#384259; /*【可调】标题颜色 */
+    font-weight:500;
+}
+.app-info .app-desc {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    font-size:14px;
+    color:#666;
+    text-align: right;
+    line-height: 1.6;
+    /* 删掉所有-webkit-box、max-height，不要强制截断 */
+}
+        /* ==========移动端适配【可调】========== */
+        /*平板宽度阈值*/
         @media (max-width: 1024px) {
             .app-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr); /*【可调】平板一行几个卡片 */
             }
         }
+        /*手机宽度阈值*/
         @media (max-width: 560px) {
             .app-grid {
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: repeat(1, 1fr); /*【可调】手机一行几个卡片 */
             }
         }
     </style>
@@ -109,7 +120,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">免扣图片</div>
-        <div class="app-desc">智能抠图。</div>
+        <div class="app-desc">智能抠图</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -124,7 +135,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">快图网</div>
-        <div class="app-desc">海量PNG素材和高清背景图库免费下载。</div>
+        <div class="app-desc">海量PNG素材和高清背景图库免费下载</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -139,14 +150,14 @@
       </div>
       <div class="app-info">
         <div class="app-name">改图鸭</div>
-        <div class="app-desc">改图鸭,您身边的图片处理专家。</div>
+        <div class="app-desc">改图鸭,您身边的图片处理专家</div>
       </div>
     </div>
     <div class="app-tag"></div>
   </div>
 
   <!-- 在线修图 -->
-  <div class="app-card" data-name="在线修图" onclick="window.open('https://phototool.cn/','_blank')">
+  <div class="app-card" data-name="修图" onclick="window.open('https://phototool.cn/','_blank')">
     <div class="app-header">
       <div class="icon-box">
         <img class="app-icon" src="https://phototool.cn/favicon.ico" alt="在线修图">
@@ -154,7 +165,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">在线修图</div>
-        <div class="app-desc">在线图像工具箱是一个专业的图片处理网站。</div>
+        <div class="app-desc">在线图像工具箱是一个专业的图片处理网站</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -169,7 +180,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">爱给图标</div>
-        <div class="app-desc">爱给让创造更简单。</div>
+        <div class="app-desc">爱给让创造更简单</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -184,7 +195,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">洪绘图标</div>
-        <div class="app-desc">专业的图标网站。</div>
+        <div class="app-desc">专业的图标网站</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -199,7 +210,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">网址搜索图标</div>
-        <div class="app-desc">输入网址就可以获取图标。</div>
+        <div class="app-desc">输入网址就可以获取图标</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -214,7 +225,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">做好图</div>
-        <div class="app-desc">在线处理图片的网站。</div>
+        <div class="app-desc">在线处理图片的网站</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -229,22 +240,22 @@
       </div>
       <div class="app-info">
         <div class="app-name">元气壁纸</div>
-        <div class="app-desc">元气壁纸，壁纸大全。</div>
+        <div class="app-desc">元气壁纸，壁纸大全</div>
       </div>
     </div>
     <div class="app-tag"></div>
   </div>
 
  <!-- 娟娟壁纸 -->
-  <div class="app-card" data-name="娟娟壁纸" onclick="window.open('https://www.jj20.com/','_blank')">
+  <div class="app-card" data-name="娟娟壁纸" onclick="window.open('shturl.cc/wWYr8qhYube','_blank')">
     <div class="app-header">
       <div class="icon-box">
-        <img class="app-icon" src="https://www.jj20.com/favicon.ico" alt="娟娟壁纸">
+        <img class="app-icon" src="shturl.cc/wWYr8qhYubefavicon.ico" alt="娟娟壁纸">
         <span class="icon-text-fallback"></span>
       </div>
       <div class="app-info">
         <div class="app-name">娟娟壁纸</div>
-        <div class="app-desc">免费下载壁纸。</div>
+        <div class="app-desc">免费下载壁纸</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -259,7 +270,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">美图秀秀网页版</div>
-        <div class="app-desc">美团秀秀网页版专业的图片处理网站。</div>
+        <div class="app-desc">美团秀秀网页版,图片处理网站</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -275,7 +286,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">360图片</div>
-        <div class="app-desc">免费下载壁纸。</div>
+        <div class="app-desc">免费下载壁纸</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -290,14 +301,14 @@
       </div>
       <div class="app-info">
         <div class="app-name">360智图</div>
-        <div class="app-desc">智能处理图片。</div>
+        <div class="app-desc">智能处理图片</div>
       </div>
     </div>
     <div class="app-tag"></div>
   </div>
 
  <!-- 图片在线压缩 -->
-  <div class="app-card" data-name="图片在线压缩" onclick="window.open('https://img.honghuohu.com/','_blank')">
+  <div class="app-card" data-name="压缩" onclick="window.open('https://img.honghuohu.com/','_blank')">
     <div class="app-header">
       <div class="icon-box">
         <img class="app-icon" src="https://img.honghuohu.com/favicon.ico" alt="图片在线压缩">
@@ -305,14 +316,14 @@
       </div>
       <div class="app-info">
         <div class="app-name">图片在线压缩</div>
-        <div class="app-desc">在线压缩图片。</div>
+        <div class="app-desc">在线压缩图片</div>
       </div>
     </div>
     <div class="app-tag"></div>
   </div>
 
  <!-- svg图片压缩 -->
-  <div class="app-card" data-name="svg图片压缩" onclick="window.open('https://svgco.de/','_blank')">
+  <div class="app-card" data-name="矢量图片压缩" onclick="window.open('https://svgco.de/','_blank')">
     <div class="app-header">
       <div class="icon-box">
         <img class="app-icon" src="https://raw.giteeusercontent.com/lanzaong/lan/raw/master/icons/tubiao/favicon.png" alt="svg图片压缩">
@@ -320,7 +331,7 @@
       </div>
       <div class="app-info">
         <div class="app-name">svg图片压缩</div>
-        <div class="app-desc">svg图片压缩。</div>
+        <div class="app-desc">svg图片压缩</div>
       </div>
     </div>
     <div class="app-tag"></div>
@@ -328,7 +339,7 @@
 
 
   <!-- imag修图 -->
-  <div class="app-card" data-name="imag修图" onclick="window.open('https://imagestool.com/','_blank')">
+  <div class="app-card" data-name="修图" onclick="window.open('https://imagestool.com/','_blank')">
     <div class="app-header">
       <div class="icon-box">
         <img class="app-icon" src="https://imagestool.com/favicon.ico" alt="imag修图">
@@ -336,14 +347,14 @@
       </div>
       <div class="app-info">
         <div class="app-name">imag修图</div>
-        <div class="app-desc">更快更安全，100%免费且无限的文件。</div>
+        <div class="app-desc">更快更安全,免费且无限的文件</div>
       </div>
     </div>
     <div class="app-tag"></div>
   </div>
 </div>
 <script>
-// 随机配色池，可以自行增减颜色【可修改】
+// 随机配色池【可调】，自行增减颜色
 const colorList = [
     '#d92121','#2774e8','#23b874','#f7911e',
     '#9340e8','#00a6b2','#7b61ff','#e64398'
@@ -353,7 +364,7 @@ const colorList = [
 const cards = document.querySelectorAll('.app-card');
 cards.forEach(card=>{
     const name = card.dataset.name;
-    // 截取前两个汉字
+    // 截取前两个汉字作为兜底图标文字【可调】修改数字可以截取更多文字
     const text = name.substring(0,2);
     // 随机颜色
     const randomColor = colorList[Math.floor(Math.random()*colorList.length)];
