@@ -12,88 +12,88 @@
             font-family: system-ui, -apple-system, sans-serif;
         }
         body {
-    /* =========网页背景图片配置【可调】========= */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    padding: 40px 20px; /*【可调】页面上下内边距 | 上下 左右 */
-}
-/* 卡片网格布局 */
-.app-grid {
-    max-width: 1400px; /*【可调】页面最大宽度 */
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /*【可调】一行卡片数量 */
-    gap: 18px; /*【可调】卡片间距 */
-}
-.app-card {
-    border: 1px solid #d6d9e2; /*【可调】卡片边框颜色 */
-    border-radius: 8px; /*【可调】卡片圆角 */
-    background: #fff; /*【可调】卡片背景色 */
-    padding: 16px; /*【可调】卡片内部留白 */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /*【可调】卡片阴影 */
-    transition: all 0.2s ease;
-    cursor: pointer;
-    height: 130px; /*【可调】卡片高度 */
-    box-sizing: border-box;
-    position: relative; /*定位基准，请勿删除*/
-}
-.app-card:hover {
-    border-color: #6388d8; /*【可调】悬浮边框色 */
-    background-color: #f0f5ff; /*【可调】悬浮背景 */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.09);
-}
-.app-header {
-    display:flex;
-    align-items: center;
-    gap:14px; /*【可调】图标与标题间距 */
-}
-.icon-box {
-    width:48px; /*【可调】图标尺寸宽 */
-    height:48px; /*【可调】图标尺寸高 */
-    border-radius:12px;
-    flex-shrink:0;
-    position:relative;
-    overflow:hidden;
-}
-.app-icon {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background: #fff;
-    padding: 6px;
-    border-radius: 8px;
-}
-.icon-text-fallback {
-    position:absolute;
-    inset:0;
-    color:#fff;
-    font-size:20px;
-    font-weight:bold;
-    display:none;
-    align-items:center;
-    justify-content:center;
-}
-.app-info {
-    flex: 1;
-}
-.app-info .app-name {
-    font-size:20px; /*【可调】标题字号 */
-    color:#384259; /*【可调】标题颜色 */
-    font-weight:500;
-}
-.app-info .app-desc {
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-    font-size:14px;
-    color:#666;
-    text-align: right;
-    line-height: 1.6;
-    /* 删掉所有-webkit-box、max-height，不要强制截断 */
-}
+            /* =========网页背景图片配置【可调】========= */
+            /* background-image:url("https://图片地址"); */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            padding: 40px 20px; /*【可调】页面上下内边距 | 上下 左右 */
+        }
+        /* 卡片网格布局 */
+        .app-grid {
+            max-width: 1400px; /*【可调】页面最大宽度 */
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /*【可调】一行卡片数量 */
+            gap: 18px; /*【可调】卡片间距 */
+        }
+        .app-card {
+            border: 1px solid #d6d9e2; /*【可调】卡片边框颜色 */
+            border-radius: 8px; /*【可调】卡片圆角 */
+            background: #fff; /*【可调】卡片背景色 */
+            padding: 16px; /*【可调】卡片内部留白 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); /*【可调】卡片阴影 */
+            transition: all 0.2s ease;
+            cursor: pointer;
+            height: 130px; /*【可调】卡片高度 */
+            box-sizing: border-box;
+            position: relative; /*定位基准，请勿删除*/
+        }
+        .app-card:hover {
+            border-color: #6388d8; /*【可调】悬浮边框色 */
+            background-color: #f0f5ff; /*【可调】悬浮背景 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+        }
+        .app-header {
+            display:flex;
+            align-items: center;
+            gap:14px; /*【可调】图标与标题间距 */
+        }
+        .icon-wrap {
+            width:48px; /*【可调】图标尺寸宽 */
+            height:48px; /*【可调】图标尺寸高 */
+            border-radius:12px;
+            flex-shrink:0;
+            position:relative;
+            overflow:hidden;
+        }
+        .app-icon {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #fff;
+            padding: 6px;
+            border-radius: 8px;
+        }
+        .text-placeholder {
+            position:absolute;
+            inset:0;
+            color:#fff;
+            font-size:20px;
+            font-weight:bold;
+            display:none;
+            align-items:center;
+            justify-content:center;
+        }
+        .app-info {
+            flex: 1;
+        }
+        .app-info .app-name {
+            font-size:20px; /*【可调】标题字号 */
+            color:#384259; /*【可调】标题颜色 */
+            font-weight:500;
+        }
+        .app-info .app-desc {
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            font-size:14px;
+            color:#666;
+            text-align: right;
+            line-height: 1.6;
+        }
         /* 移动端自动适配 */
         @media (max-width: 1024px) {
             .app-grid {
@@ -109,111 +109,110 @@
 </head>
 <body>
 <div class="app-grid">
- <!-- 在线工具大全 -->
-  <div class="app-card" data-name="在线工具大全" onclick="window.open('https://www.lddgo.net/base/class/','_blank')">
-    <div class="app-header">
-      <div class="icon-wrap">
-        <img class="app-icon" src="https://www.lddgo.net/base/class/favicon.ico" alt="在线工具大全">
-        <span class="text-placeholder"></span>
-      </div>
-      <div class="app-info">
-        <div class="app-name">在线工具大全</div>
-        <div class="app-desc">在线工具大全</div>
-      </div>
+    <!-- 在线工具大全 -->
+    <div class="app-card" data-name="在线工具大全" onclick="window.open('https://www.lddgo.net/base/class/','_blank')">
+        <div class="app-header">
+            <div class="icon-wrap">
+                <img class="app-icon" src="https://www.lddgo.net/base/class/favicon.ico" alt="在线工具大全">
+                <span class="text-placeholder"></span>
+            </div>
+            <div class="app-info">
+                <div class="app-name">在线工具大全</div>
+                <div class="app-desc">在线工具大全</div>
+            </div>
+        </div>
+        <div class="app-tag"></div>
     </div>
-    <div class="app-tag"></div>
-  </div>
 
-
- <!-- 五六工具 -->
-  <div class="app-card" data-name="五六工具" onclick="window.open('https://tool56.com/','_blank')">
-    <div class="app-header">
-      <div class="icon-wrap">
-        <img class="app-icon" src="https://tool56.com/favicon.ico" alt="五六工具">
-        <span class="text-placeholder"></span>
-      </div>
-      <div class="app-info">
-        <div class="app-name">五六工具</div>
-        <div class="app-desc">在线工具集合,无需下载打开即用</div>
-      </div>
+    <!-- 五六工具 -->
+    <div class="app-card" data-name="五六工具" onclick="window.open('https://tool56.com/','_blank')">
+        <div class="app-header">
+            <div class="icon-wrap">
+                <img class="app-icon" src="https://tool56.com/favicon.ico" alt="五六工具">
+                <span class="text-placeholder"></span>
+            </div>
+            <div class="app-info">
+                <div class="app-name">五六工具</div>
+                <div class="app-desc">在线工具集合,无需下载打开即用</div>
+            </div>
+        </div>
+        <div class="app-tag"></div>
     </div>
-    <div class="app-tag"></div>
-  </div>
 
-<!-- 懒人工具 -->
-  <div class="app-card" data-name="懒人工具" onclick="window.open('https://www.lanren-tools.com/','_blank')">
-    <div class="app-header">
-      <div class="icon-wrap">
-        <img class="app-icon" src="https://www.lanren-tools.com/favicon.ico" alt="懒人工具">
-        <span class="text-placeholder"></span>
-      </div>
-      <div class="app-info">
-        <div class="app-name">懒人工具</div>
-        <div class="app-desc">即开即用的工具箱</div>
-      </div>
+    <!-- 懒人工具 -->
+    <div class="app-card" data-name="懒人工具" onclick="window.open('https://www.lanren-tools.com/','_blank')">
+        <div class="app-header">
+            <div class="icon-wrap">
+                <img class="app-icon" src="https://www.lanren-tools.com/favicon.ico" alt="懒人工具">
+                <span class="text-placeholder"></span>
+            </div>
+            <div class="app-info">
+                <div class="app-name">懒人工具</div>
+                <div class="app-desc">即开即用的工具箱</div>
+            </div>
+        </div>
+        <div class="app-tag"></div>
     </div>
-    <div class="app-tag"></div>
-  </div>
 
-  <!-- 在线工具箱 -->
-  <div class="app-card" data-name="在线工具箱" onclick="window.open('https://www.zaixiangongju.com/','_blank')">
-    <div class="app-header">
-      <div class="icon-wrap">
-        <img class="app-icon" src="https://www.zaixiangongju.com/favicon.ico" alt="在线工具箱">
-        <span class="text-placeholder"></span>
-      </div>
-      <div class="app-info">
-        <div class="app-name">在线工具箱</div>
-        <div class="app-desc">在线工具箱</div>
-      </div>
+    <!-- 在线工具箱 -->
+    <div class="app-card" data-name="在线工具箱" onclick="window.open('https://www.zaixiangongju.com/','_blank')">
+        <div class="app-header">
+            <div class="icon-wrap">
+                <img class="app-icon" src="https://www.zaixiangongju.com/favicon.ico" alt="在线工具箱">
+                <span class="text-placeholder"></span>
+            </div>
+            <div class="app-info">
+                <div class="app-name">在线工具箱</div>
+                <div class="app-desc">在线工具箱</div>
+            </div>
+        </div>
+        <div class="app-tag"></div>
     </div>
-    <div class="app-tag"></div>
-  </div>
 
-  <!-- 记灵工具箱 -->
-  <div class="app-card" data-name="记灵工具箱" onclick="window.open('https://remeins.com/','_blank')">
-    <div class="app-header">
-      <div class="icon-wrap">
-        <img class="app-icon" src="https://remeins.com/favicon.ico" alt="记灵工具箱">
-        <span class="text-placeholder"></span>
-      </div>
-      <div class="app-info">
-        <div class="app-name">记灵工具箱</div>
-        <div class="app-desc">更专注于发现工具的实用性</div>
-      </div>
+    <!-- 记灵工具箱 -->
+    <div class="app-card" data-name="记灵工具箱" onclick="window.open('https://remeins.com/','_blank')">
+        <div class="app-header">
+            <div class="icon-wrap">
+                <img class="app-icon" src="https://remeins.com/favicon.ico" alt="记灵工具箱">
+                <span class="text-placeholder"></span>
+            </div>
+            <div class="app-info">
+                <div class="app-name">记灵工具箱</div>
+                <div class="app-desc">更专注于发现工具的实用性</div>
+            </div>
+        </div>
+        <div class="app-tag"></div>
     </div>
-    <div class="app-tag"></div>
-  </div>
 
-  <!-- 工具哇 -->
-  <div class="app-card" data-name="工具哇" onclick="window.open('https://toolwa.com/','_blank')">
-    <div class="app-header">
-      <div class="icon-wrap">
-        <img class="app-icon" src="https://toolwa.com/favicon.ico" alt="工具哇">
-        <span class="text-placeholder"></span>
-      </div>
-      <div class="app-info">
-        <div class="app-name">工具哇</div>
-        <div class="app-desc">工具哇无需下载打开即用</div>
-      </div>
+    <!-- 工具哇 -->
+    <div class="app-card" data-name="工具哇" onclick="window.open('https://toolwa.com/','_blank')">
+        <div class="app-header">
+            <div class="icon-wrap">
+                <img class="app-icon" src="https://toolwa.com/favicon.ico" alt="工具哇">
+                <span class="text-placeholder"></span>
+            </div>
+            <div class="app-info">
+                <div class="app-name">工具哇</div>
+                <div class="app-desc">工具哇无需下载打开即用</div>
+            </div>
+        </div>
+        <div class="app-tag"></div>
     </div>
-    <div class="app-tag"></div>
-  </div>
 
-  <!-- 菜鸟工具 -->
-  <div class="app-card" data-name="菜鸟工具" onclick="window.open('https://www.jyshare.com/','_blank')">
-    <div class="app-header">
-      <div class="icon-wrap">
-        <img class="app-icon" src="https://www.jyshare.com/favicon.ico" alt="菜鸟工具">
-        <span class="text-placeholder"></span>
-      </div>
-      <div class="app-info">
-        <div class="app-name">菜鸟工具</div>
-        <div class="app-desc">菜鸟工具</div>
-      </div>
+    <!-- 菜鸟工具 -->
+    <div class="app-card" data-name="菜鸟工具" onclick="window.open('https://www.jyshare.com/','_blank')">
+        <div class="app-header">
+            <div class="icon-wrap">
+                <img class="app-icon" src="https://www.jyshare.com/favicon.ico" alt="菜鸟工具">
+                <span class="text-placeholder"></span>
+            </div>
+            <div class="app-info">
+                <div class="app-name">菜鸟工具</div>
+                <div class="app-desc">菜鸟工具</div>
+            </div>
+        </div>
+        <div class="app-tag"></div>
     </div>
-    <div class="app-tag"></div>
-  </div>
 </div>
 <script>
 // 随机配色池，可以自行增减颜色【可修改】
