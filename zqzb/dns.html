@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>域名</title>
+    <title>图片工具</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: system-ui, -apple-system, sans-serif; /*【可调】全局字体 */
         }
-        body {
+body {
     /* =========网页背景图片配置【可调】========= */
     background-size: cover;
     background-position: center;
@@ -94,22 +94,24 @@
     line-height: 1.6;
     /* 删掉所有-webkit-box、max-height，不要强制截断 */
 }
-        /* 移动端自动适配 */
+        /* ==========移动端适配【可调】========== */
+        /*平板宽度阈值*/
         @media (max-width: 1024px) {
             .app-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr); /*【可调】平板一行几个卡片 */
             }
         }
+        /*手机宽度阈值*/
         @media (max-width: 560px) {
             .app-grid {
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: repeat(1, 1fr); /*【可调】手机一行几个卡片 */
             }
         }
     </style>
 </head>
 <body>
 <div class="app-grid">
- <!-- cf域名托管 -->
+<!-- cf域名托管 -->
   <div class="app-card" data-name="cf域名托管" onclick="window.open('https://dash.cloudflare.com/','_blank')">
     <div class="app-header">
       <div class="icon-box">
@@ -170,7 +172,7 @@
   </div>
 </div>
 <script>
-// 随机配色池，可以自行增减颜色【可修改】
+// 随机配色池【可调】，自行增减颜色
 const colorList = [
     '#d92121','#2774e8','#23b874','#f7911e',
     '#9340e8','#00a6b2','#7b61ff','#e64398'
@@ -180,7 +182,7 @@ const colorList = [
 const cards = document.querySelectorAll('.app-card');
 cards.forEach(card=>{
     const name = card.dataset.name;
-    // 截取前两个汉字
+    // 截取前两个汉字作为兜底图标文字【可调】修改数字可以截取更多文字
     const text = name.substring(0,2);
     // 随机颜色
     const randomColor = colorList[Math.floor(Math.random()*colorList.length)];
